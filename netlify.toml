@@ -1,7 +1,50 @@
+# Static asset handling - must come BEFORE catch-all redirect
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*.js"
+  to = "/*.js"
+  status = 200
+
+[[redirects]]
+  from = "/*.jsx"
+  to = "/*.jsx"
+  status = 200
+
+[[redirects]]
+  from = "/*.css"
+  to = "/*.css"
+  status = 200
+
+# SPA fallback - MUST BE LAST
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Headers for JavaScript files
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
+
+[[headers]]
+  for = "/*.jsx"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
+
+[[headers]]
+  for = "/*.jsx.1"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
+
+[[headers]]
+  for = "/*.js.1"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
 
 [build]
   functions = "netlify/functions"
