@@ -9,7 +9,17 @@
     Content-Type = "application/javascript; charset=UTF-8"
 
 [[headers]]
-  for = "/*.mjs"
+  for = "/*.jsx"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
+
+[[headers]]
+  for = "/*.jsx.1"
+  [headers.values]
+    Content-Type = "application/javascript; charset=UTF-8"
+
+[[headers]]
+  for = "/*.js.1"
   [headers.values]
     Content-Type = "application/javascript; charset=UTF-8"
 
